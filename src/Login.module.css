@@ -1,0 +1,80 @@
+.form-container {
+    /* padding: 20px; */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: 90vh;
+    background-image: linear-gradient(79deg, #7439db, #c66fbc, #f7944d);
+    /* border-radius: 8px; */
+    /* justify-content: center; */
+    /* border: 2px solid #fff; */
+    /* color: #fff; */
+}
+
+.login-container {
+  display: flex;
+  flex-direction: column;
+}
+
+.form-container h2 {
+  margin-bottom: 2rem;
+  color: black !important;
+}
+
+.login-container form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.login-container label {
+  font-weight: bold;
+  margin-bottom: 0.5rem;
+  text-align: left;
+  padding: 0.25rem, 0;
+}
+
+.login-container input {
+  margin: 0.5rem, 0;
+  padding: 0.5rem;
+  border: none;
+  border-radius: 10px;
+  margin-bottom: 1rem;
+  width: 20rem;
+}
+
+.login-container button {
+  padding: 0.5rem 2rem;
+  /* background-color: #fff; */
+  color: #7439db;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: bold;
+  width: fit-content;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: auto;
+}
+
+.error {
+  color: #000;
+  font-size: 0.8rem;
+  margin-top: 0.5rem;
+}
+
+.btn-link {
+    background: none;
+    /* color: #fff; */
+    text-decoration: underline;
+    border: none;
+    margin-top: 20px;
+    cursor: pointer;
+}
+
+.login-image {
+  width: 100%;
+  height: auto;
+  display: block;
+}
