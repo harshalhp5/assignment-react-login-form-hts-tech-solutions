@@ -6,50 +6,45 @@ import { Grid, Paper, Typography } from '@mui/material';
 import LoginImage from '../images/secure_login.png'
 
 const Login = (props) => {
-
-  const { setUserdata } = props;
-
-    const navigate = useNavigate();
-
-    const [email, setEmail] = useState("");
-    const [password, setPassword] = useState("");
-    const [emailError, setEmailError] = useState("");
-    const [passwordError, setPasswordError] = useState("");
-
-    const handleEmailChange = (event) => {
-      setEmail(event.target.value);
-      setEmailError("");
-    }
-
-    const handlePasswordChange = (event) => {
-      setPassword(event.target.value);
-      setPasswordError("");
-    };
-    
-    const handleSubmit = (event) => {
-      event.preventDefault();
-      if (!email) {
-        setEmailError("Please enter an Email Address");
-      }
-      else if (email && !validateEmail(email)) {
-        setEmailError("Please enter a Valid Email Address");
-      }
-      else if (!password) {
-        setPasswordError("Please enter a Password");
-      }
-      else {
-        // Redirect to Profile page for successful login
-        setUserdata({email: email, password: password});
-        navigate("/");
-      }
-  };
   
+  const { setUserdata } = props;
+  const navigate = useNavigate();
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const [emailError, setEmailError] = useState("");
+  const [passwordError, setPasswordError] = useState("");
+
+  const handleEmailChange = (event) => {
+    setEmail(event.target.value);
+    setEmailError("");
+  };
+
+  const handlePasswordChange = (event) => {
+    setPassword(event.target.value);
+    setPasswordError("");
+  };
+
+  const handleSubmit = (event) => {
+    event.preventDefault();
+    if (!email) {
+      setEmailError("Please enter an Email Address");
+    } else if (email && !validateEmail(email)) {
+      setEmailError("Please enter a Valid Email Address");
+    } else if (!password) {
+      setPasswordError("Please enter a Password");
+    } else {
+        // Redirect to Profile page for successful login
+        setUserdata({ email: email, password: password });
+        navigate("/");
+    }
+  };
+
   const validateEmail = (email) => {
     // Regular expression to validate email format
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     return emailRegex.test(email);
   };
-  
+
   return (
     <>
       <Navbar />
@@ -65,7 +60,7 @@ const Login = (props) => {
         </Grid>
         <Grid item lg={5} sm={12} xs={12}>
           <Paper elevation={3} className={styles["form-container"]}>
-            <Typography variant='h4' align='center' mt={8} mb={8} gutterBottom>
+            <Typography variant="h4" align="center" mt={8} mb={8} gutterBottom>
               Login Form
             </Typography>
             <form className={styles["login-container"]} onSubmit={handleSubmit}>

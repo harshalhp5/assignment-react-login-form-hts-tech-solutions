@@ -3,14 +3,12 @@ import styles from "../Login.module.css";
 import { useNavigate } from "react-router-dom";
 import Navbar from "../Navbar";
 import { Alert, Box, Button, Grid, Paper, TextField, Typography } from "@mui/material";
-import RegisterImage from "../images/Sign_up.png"
-import { CheckBox } from "@mui/icons-material";
+import RegisterImage from "../images/Sign_up.png";
 
 const Register = (props) => {
 
-    const { setUserdata } = props;
-
-  
+  const { setUserdata } = props;
+  const navigate = useNavigate();
   const [error, setError] = useState({
     input: "",
     status: false,
@@ -18,7 +16,6 @@ const Register = (props) => {
     type: ""
   });
 
-  const navigate = useNavigate();
 
   const handleSubmit = (event) => {
     event.preventDefault();
@@ -128,7 +125,7 @@ const Register = (props) => {
   return (
     <>
       <Navbar />
-      <Grid container sx={{ height: "90vh" }}>
+      <Grid container sx={{ height: "100vh" }}>
         <Grid
           item
           lg={7}
@@ -141,8 +138,13 @@ const Register = (props) => {
           }}
         ></Grid>
         <Grid item lg={5} sm={12} xs={12}>
-          <Paper elevation={3} style={{padding: "20px", height: "76.2vh", textAlign: "center"}}>
-            <Typography variant="h4" my={3} style={{textAlign: "center"}}>Sign Up Form</Typography>
+          <Paper
+            elevation={3}
+            className={styles["form-container"]}
+          >
+            <Typography variant="h4" my={3} style={{ textAlign: "center" }}>
+              Sign Up Form
+            </Typography>
             {/* Note: Registration Form is made using Material UI Components */}
             <Box
               component="form"
@@ -220,12 +222,12 @@ const Register = (props) => {
                   Sign Up
                 </Button>
               </Box>
-            <button
-              className={styles["btn-link"]}
-              onClick={() => navigate("/login")}
-            >
-              Already have an Account? Sign In here!
-            </button>
+              <button
+                className={styles["btn-link"]}
+                onClick={() => navigate("/login")}
+              >
+                Already have an Account? Sign In here!
+              </button>
             </Box>
           </Paper>
         </Grid>

@@ -5,6 +5,7 @@ import './app.css';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import Home from './Home';
 import UserContext from './contexts/UserContext';
+import ReactHookForm from './components/ReactHookForm';
 
 function App() {
 
@@ -18,6 +19,7 @@ function App() {
               <Route path='/' index element={<Home />} />
               <Route path='login' element={<Login setUserdata={setUserdata} />} />
               <Route path='register' element={<Register setUserdata={setUserdata} />} />
+              <Route path='react-hook-form' element={<ReactHookForm setUserdata={setUserdata} />} />
           </Routes>
         </BrowserRouter>
       </UserContext.Provider>
